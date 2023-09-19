@@ -9,6 +9,7 @@ class BbsViewModel extends ChangeNotifier {
     _model = FirestoreModel.prod();
   }
 
+  //テスト時に使用
   BbsViewModel.withModel(FirestoreModel model) {
     _model = model;
   }

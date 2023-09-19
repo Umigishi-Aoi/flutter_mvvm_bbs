@@ -7,6 +7,7 @@ class AuthViewModel extends ChangeNotifier {
     _model = AuthModel.prod();
   }
 
+  //テスト時に使用
   AuthViewModel.withModel(AuthModel model) {
     _model = model;
   }
