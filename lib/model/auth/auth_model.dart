@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthModel {
-  AuthModel();
+  const AuthModel();
 
   Future<void> signInWithGitHub() async {
     final githubProvider = GithubAuthProvider();

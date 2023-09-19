@@ -4,19 +4,12 @@ import '../../model/auth/auth_model.dart';
 
 class AuthViewModel extends ChangeNotifier {
   AuthViewModel() {
-    _model = AuthModel();
-    getUserInfo();
+    _model = const AuthModel();
   }
 
   late AuthModel _model;
 
-  String? _userName;
-  String? _photoUrl;
-
   String? _errorMessage;
-
-  String? get userName => _userName;
-  String? get photoUrl => _photoUrl;
 
   String? get errorMessage => _errorMessage;
 
@@ -30,14 +23,7 @@ class AuthViewModel extends ChangeNotifier {
       return;
     }
 
-    getUserInfo();
     notifyListeners();
-  }
-
-  void getUserInfo() {
-    final user = _model.currentUser();
-    _userName = user?.displayName;
-    _photoUrl = user?.photoURL;
   }
 
   Future<void> signOut() async {
@@ -47,8 +33,6 @@ class AuthViewModel extends ChangeNotifier {
       _errorMessage = e.toString();
       return;
     }
-    _userName = null;
-    _photoUrl = null;
     notifyListeners();
   }
 }

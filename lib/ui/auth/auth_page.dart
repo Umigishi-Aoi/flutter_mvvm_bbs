@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../bbs/bbs_page.dart';
 import '../common/error_page.dart';
 import 'auth_view_model.dart';
 import 'sign_in_page.dart';
@@ -18,18 +19,7 @@ class AuthPage extends StatelessWidget {
           if (errorMessage != null) {
             return ErrorPage(message: errorMessage);
           }
-          return viewModel.isLogin
-              ? Scaffold(
-                  appBar: AppBar(
-                    actions: [
-                      IconButton(
-                        onPressed: viewModel.signOut,
-                        icon: const Icon(Icons.logout),
-                      ),
-                    ],
-                  ),
-                )
-              : const SignInPage();
+          return viewModel.isLogin ? const BbsPage() : const SignInPage();
         },
       ),
     );
