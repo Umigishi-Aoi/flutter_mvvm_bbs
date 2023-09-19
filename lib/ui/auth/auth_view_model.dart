@@ -5,6 +5,7 @@ import '../../model/auth/auth_model.dart';
 class AuthViewModel extends ChangeNotifier {
   AuthViewModel() {
     _model = AuthModel();
+    getUserInfo();
   }
 
   late AuthModel _model;
@@ -29,10 +30,14 @@ class AuthViewModel extends ChangeNotifier {
       return;
     }
 
+    getUserInfo();
+    notifyListeners();
+  }
+
+  void getUserInfo() {
     final user = _model.currentUser();
     _userName = user?.displayName;
     _photoUrl = user?.photoURL;
-    notifyListeners();
   }
 
   Future<void> signOut() async {
