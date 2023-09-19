@@ -9,7 +9,7 @@ class PostViewModel {
     _authModel = AuthModel.prod();
     _firestoreModel = FirestoreModel.prod();
   }
-  
+
   //テスト時に使用
   PostViewModel.withModel(
     AuthModel authModel,
@@ -38,7 +38,8 @@ class PostViewModel {
       BbsField.userName.name: user.displayName,
       BbsField.post.name: post,
       BbsField.photoUrl.name: user.photoURL,
-      BbsField.createdAt.name: Timestamp.now(),
+      BbsField.createdAt.name:
+          Timestamp(Timestamp.fromDate(DateTime.now()).seconds, 0),
     };
     try {
       await _firestoreModel.setData(data);
