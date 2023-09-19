@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "750229581881",
+    "project_id": "flutter-mvvm-bbs",
+    "storage_bucket": "flutter-mvvm-bbs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750229581881:android:1c14c0bb3c5747bc5bdde8",
+        "android_client_info": {
+          "package_name": "com.example.fluter_mvvm_bbs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP9Zk3e6GwWfIkB5saXNnMqlBb6GeOcl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
