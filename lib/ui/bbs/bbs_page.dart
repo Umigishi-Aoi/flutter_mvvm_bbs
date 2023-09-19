@@ -14,7 +14,7 @@ class BbsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => BbsViewModel()..getAllData(),
-      child: Scaffold(
+      builder: (context, _) => Scaffold(
         appBar: AppBar(
           title: const Text('BBS Page'),
           actions: [

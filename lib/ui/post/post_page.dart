@@ -23,7 +23,7 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return Provider(
       create: (_) => PostViewModel(),
-      child: Scaffold(
+      builder: (context, _) => Scaffold(
         appBar: AppBar(
           title: const Text('新規投稿'),
         ),
