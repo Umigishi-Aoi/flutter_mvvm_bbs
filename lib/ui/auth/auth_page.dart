@@ -14,7 +14,7 @@ class AuthPage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => AuthViewModel(),
       child: Consumer<AuthViewModel>(
-        builder: (context, viewModel, _) {
+        builder: (_, viewModel, __) {
           final errorMessage = viewModel.errorMessage;
           if (errorMessage != null) {
             return ErrorPage(message: errorMessage);

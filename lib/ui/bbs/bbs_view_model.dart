@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
+import '../../config/firestore_settings.dart';
 import '../../model/firestore/firestore_model.dart';
-import '../common/firestore_settings.dart';
 
 class BbsViewModel extends ChangeNotifier {
   BbsViewModel() {

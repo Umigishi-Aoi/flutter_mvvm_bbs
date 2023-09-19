@@ -1,3 +1,4 @@
+// FirestoreのCollection名やField名を定義する
 enum Collection {
   bbs;
 }
