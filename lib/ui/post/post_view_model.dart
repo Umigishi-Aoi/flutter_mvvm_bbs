@@ -6,8 +6,16 @@ import '../../model/firestore/firestore_model.dart';
 
 class PostViewModel {
   PostViewModel() {
-    _authModel = const AuthModel();
-    _firestoreModel = const FirestoreModel();
+    _authModel = AuthModel.prod();
+    _firestoreModel = FirestoreModel.prod();
+  }
+
+  PostViewModel.withModel(
+    AuthModel authModel,
+    FirestoreModel firestoreModel,
+  ) {
+    _authModel = authModel;
+    _firestoreModel = firestoreModel;
   }
 
   late AuthModel _authModel;

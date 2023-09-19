@@ -1,18 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthModel {
-  const AuthModel();
+  const AuthModel(this.instance);
+
+  factory AuthModel.prod() {
+    return AuthModel(FirebaseAuth.instance);
+  }
+
+  final FirebaseAuth instance;
 
   Future<void> signInWithGitHub() async {
     final githubProvider = GithubAuthProvider();
-    await FirebaseAuth.instance.signInWithProvider(githubProvider);
+    await instance.signInWithProvider(githubProvider);
   }
 
   Future<void> signOut() async {
-    await FirebaseAuth.instance.signOut();
+    await instance.signOut();
   }
 
   User? currentUser() {
-    return FirebaseAuth.instance.currentUser;
+    return instance.currentUser;
   }
 }
