@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
-      - run: flutter format -l 80 --set-exit-if-changed .
+      - run: dart format . -l 80 --set-exit-if-changed .
 
   analyze:
     runs-on: ubuntu-latest
