@@ -43,6 +43,8 @@ dependencies:
 
 
 dev_dependencies:
+  fake_cloud_firestore: ^2.4.1+1
+  firebase_auth_mocks: ^0.12.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
