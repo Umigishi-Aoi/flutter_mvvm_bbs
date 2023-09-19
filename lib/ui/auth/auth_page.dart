@@ -13,15 +13,14 @@ class AuthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => AuthViewModel(),
-      child: Consumer<AuthViewModel>(
-        builder: (context, viewModel, _) {
-          final errorMessage = viewModel.errorMessage;
-          if (errorMessage != null) {
-            return ErrorPage(message: errorMessage);
-          }
-          return viewModel.isLogin ? const BbsPage() : const SignInPage();
-        },
-      ),
+      builder: (context, _) {
+        final viewModel = context.watch<AuthViewModel>();
+        final errorMessage = viewModel.errorMessage;
+        if (errorMessage != null) {
+          return ErrorPage(message: errorMessage);
+        }
+        return viewModel.isLogin ? const BbsPage() : const SignInPage();
+      },
     );
   }
 }

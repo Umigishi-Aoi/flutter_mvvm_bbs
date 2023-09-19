@@ -10,11 +10,9 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Consumer<AuthViewModel>(
-          builder: (context, viewModel, _) => ElevatedButton(
-            onPressed: viewModel.signInWithGitHub,
-            child: const Text('Sign in with GitHub'),
-          ),
+        child: ElevatedButton(
+          onPressed: context.read<AuthViewModel>().signInWithGitHub,
+          child: const Text('Sign in with GitHub'),
         ),
       ),
     );
