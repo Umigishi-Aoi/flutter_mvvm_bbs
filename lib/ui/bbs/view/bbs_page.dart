@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../config/firestore_settings.dart';
-import '../auth/auth_view_model.dart';
-import '../post/post_page.dart';
+import '../../../config/firestore_settings.dart';
+import '../../auth/view_model/auth_view_model.dart';
+import '../../post/view/post_page.dart';
+import '../view_model/bbs_view_model.dart';
 import 'bbs_item.dart';
-import 'bbs_view_model.dart';
 
 class BbsPage extends StatelessWidget {
   const BbsPage({super.key});

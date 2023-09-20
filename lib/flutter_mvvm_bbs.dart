@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ui/auth/auth_page.dart';
+import 'ui/auth/view/auth_page.dart';
 
 class FlutterMvvmBbs extends StatelessWidget {
   const FlutterMvvmBbs({super.key});

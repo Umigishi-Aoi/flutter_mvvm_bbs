@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'post_view_model.dart';
+import '../view_model/post_view_model.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
