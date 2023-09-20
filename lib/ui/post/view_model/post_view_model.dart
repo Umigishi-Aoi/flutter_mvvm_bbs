@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../config/firestore_settings.dart';
-import '../../model/auth/auth_model.dart';
-import '../../model/firestore/firestore_model.dart';
+import '../../../config/firestore_settings.dart';
+import '../../../model/auth/auth_model.dart';
+import '../../../model/firestore/firestore_model.dart';
 
 class PostViewModel {
   PostViewModel() {

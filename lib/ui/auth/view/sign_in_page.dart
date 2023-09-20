@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'auth_view_model.dart';
+import '../view_model/auth_view_model.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});

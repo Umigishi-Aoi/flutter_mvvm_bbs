@@ -6,7 +6,7 @@ import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:fluter_mvvm_bbs/config/firestore_settings.dart';
 import 'package:fluter_mvvm_bbs/model/auth/auth_model.dart';
 import 'package:fluter_mvvm_bbs/model/firestore/firestore_model.dart';
-import 'package:fluter_mvvm_bbs/ui/post/post_view_model.dart';
+import 'package:fluter_mvvm_bbs/ui/post/view_model/post_view_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

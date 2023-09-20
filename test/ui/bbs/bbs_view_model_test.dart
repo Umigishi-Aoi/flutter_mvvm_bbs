@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:fluter_mvvm_bbs/config/firestore_settings.dart';
 import 'package:fluter_mvvm_bbs/model/firestore/firestore_model.dart';
-import 'package:fluter_mvvm_bbs/ui/bbs/bbs_view_model.dart';
+import 'package:fluter_mvvm_bbs/ui/bbs/view_model/bbs_view_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
