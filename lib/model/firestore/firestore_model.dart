@@ -3,17 +3,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../config/firestore_settings.dart';
 
 class FirestoreModel {
-  const FirestoreModel();
+  const FirestoreModel(this.instance);
+
+  factory FirestoreModel.prod() {
+    return FirestoreModel(FirebaseFirestore.instance);
+  }
+
+  final FirebaseFirestore instance;
 
   Future<void> setData(Map<String, dynamic> data) async {
-    await FirebaseFirestore.instance
-        .collection(Collection.bbs.name)
-        .doc()
-        .set(data);
+    await instance.collection(Collection.bbs.name).doc().set(data);
   }
 
   Future<QuerySnapshot<Map<String, dynamic>>> getAllData() async {
-    return FirebaseFirestore.instance
+    return instance
         .collection(Collection.bbs.name)
         .orderBy(BbsField.createdAt.name, descending: true)
         .get();

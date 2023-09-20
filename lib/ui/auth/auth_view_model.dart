@@ -4,7 +4,12 @@ import '../../model/auth/auth_model.dart';
 
 class AuthViewModel extends ChangeNotifier {
   AuthViewModel() {
-    _model = const AuthModel();
+    _model = AuthModel.prod();
+  }
+
+  //テスト時に使用
+  AuthViewModel.withModel(AuthModel model) {
+    _model = model;
   }
 
   late AuthModel _model;

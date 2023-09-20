@@ -6,7 +6,12 @@ import '../../model/firestore/firestore_model.dart';
 
 class BbsViewModel extends ChangeNotifier {
   BbsViewModel() {
-    _model = const FirestoreModel();
+    _model = FirestoreModel.prod();
+  }
+
+  //テスト時に使用
+  BbsViewModel.withModel(FirestoreModel model) {
+    _model = model;
   }
 
   late FirestoreModel _model;

@@ -6,8 +6,17 @@ import '../../model/firestore/firestore_model.dart';
 
 class PostViewModel {
   PostViewModel() {
-    _authModel = const AuthModel();
-    _firestoreModel = const FirestoreModel();
+    _authModel = AuthModel.prod();
+    _firestoreModel = FirestoreModel.prod();
+  }
+
+  //テスト時に使用
+  PostViewModel.withModel(
+    AuthModel authModel,
+    FirestoreModel firestoreModel,
+  ) {
+    _authModel = authModel;
+    _firestoreModel = firestoreModel;
   }
 
   late AuthModel _authModel;
@@ -29,7 +38,8 @@ class PostViewModel {
       BbsField.userName.name: user.displayName,
       BbsField.post.name: post,
       BbsField.photoUrl.name: user.photoURL,
-      BbsField.createdAt.name: Timestamp.now(),
+      BbsField.createdAt.name:
+          Timestamp(Timestamp.fromDate(DateTime.now()).seconds, 0),
     };
     try {
       await _firestoreModel.setData(data);
