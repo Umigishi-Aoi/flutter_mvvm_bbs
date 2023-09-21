@@ -7,6 +7,7 @@ import 'package:fluter_mvvm_bbs/config/firestore_settings.dart';
 import 'package:fluter_mvvm_bbs/model/auth/auth_model.dart';
 import 'package:fluter_mvvm_bbs/model/firestore/firestore_model.dart';
 import 'package:fluter_mvvm_bbs/ui/post/view_model/post_view_model.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -18,16 +19,20 @@ void main() {
 
   final authModel = AuthModel(authInstance);
 
-  final postViewModel = PostViewModel.withModel(authModel, firestoreModel);
+  const post = 'post test';
+
+  final controller = TextEditingController()..text = post;
+
+  final postViewModel =
+      PostViewModel.withModel(authModel, firestoreModel, controller);
 
   group('PostViewModel Test', () {
     test('post test', () async {
       await authInstance.signInWithProvider(GithubAuthProvider());
       final userName = authInstance.currentUser?.displayName;
       final photoUrl = authInstance.currentUser?.photoURL;
-      const post = 'test post';
       await withClock(Clock.fixed(DateTime(2023)), () async {
-        await postViewModel.setData(post);
+        await postViewModel.setData();
 
         final snapshot =
             await firestoreInstance.collection(Collection.bbs.name).get();
