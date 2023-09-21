@@ -6,7 +6,7 @@ import '../../../model/firestore/firestore_model.dart';
 
 class BbsViewModel extends ChangeNotifier {
   BbsViewModel() {
-    _model = FirestoreModel.prod();
+    _model = FirestoreModel.app();
   }
 
   //テスト時に使用

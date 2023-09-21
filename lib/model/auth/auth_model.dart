@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthModel {
+  // テスト時はこちらでモックを渡す
   const AuthModel(this.instance);
 
-  factory AuthModel.prod() {
+  //アプリではこちらを使い、FirebaseAuth.instanceでインスタンス化する
+  factory AuthModel.app() {
     return AuthModel(FirebaseAuth.instance);
   }
 
