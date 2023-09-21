@@ -7,8 +7,8 @@ import '../../../model/firestore/firestore_model.dart';
 
 class PostViewModel extends ChangeNotifier {
   PostViewModel() {
-    _authModel = AuthModel.prod();
-    _firestoreModel = FirestoreModel.prod();
+    _authModel = AuthModel.app();
+    _firestoreModel = FirestoreModel.app();
     _controller = TextEditingController();
   }
 

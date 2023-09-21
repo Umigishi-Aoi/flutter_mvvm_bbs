@@ -3,9 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../config/firestore_settings.dart';
 
 class FirestoreModel {
+  // テスト時はこちらでモックを渡す
   const FirestoreModel(this.instance);
 
-  factory FirestoreModel.prod() {
+  //アプリではこちらを使い、FirebaseFirestore.instanceでインスタンス化する
+  factory FirestoreModel.app() {
     return FirestoreModel(FirebaseFirestore.instance);
   }
 
