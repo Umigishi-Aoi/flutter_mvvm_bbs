@@ -1,16 +1,62 @@
 # fluter_mvvm_bbs
 
-A new Flutter project.
+このリポジトリはMVVM のアーキテクチャで作られたFlutter製のサンプルアプリのリポジトリです。
 
-## Getting Started
+MVVM の説明等は近日公開の記事をご確認ください。
 
-This project is a starting point for a Flutter application.
+## アプリ要件、実行環境等
 
-A few resources to get you started if this is your first Flutter project:
+### アプリ要件
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+このアプリは掲示板のように、簡単な一言を投稿できるアプリです。
+以下の機能を持っています。
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- GitHub ログイン機能 
+- 投稿表示機能
+  - GitHubのアイコン
+  - GitHubの表示名
+  - 投稿時刻
+  - 投稿内容
+- 投稿機能
+
+またUnitテストの実装も行っています。
+
+### 実行環境
+
+このアプリは以下の環境で実行できることを確認しています。
+
+- Android
+- iOS
+
+### 開発環境
+
+このアプリで使用しているBaaSやパッケージは以下です。
+
+- Flutter 3.13.4 stable
+- Firebase (Authentication, Cloud Firestore )
+- Provider
+
+## 設計パターンとフォルダ構成
+
+### 設計パターン
+
+ここで、設計パターンとはアーキテクチャのことを指しています。
+このアプリはMVVM の設計パターンで作成されています。
+MVVM の説明、メリット等については後日公開予定の記事をご確認ください。
+
+### フォルダ構成
+
+このアプリは、MVVM のModel, View, ViewModel がそれぞれどのようなコードで記述されるか理解しやすいように、どのクラスグループ(レイヤー)に属するのかフォルダ名にて示しています。
+このアプリの上位層はUIフォルダとModelフォルダにまず分かれます。
+UI層にはView とViewModel のコードが機能ごとに保管されています。Model層には Model のコードが保管されています。
+
+## 作成の目的
+
+このアプリはMVVM の設計パターンで作成されたFlutterアプリのサンプルとして作成されました。
+MVVM を知らない初学者の方に向けて、
+どのようなフォルダ構成で、どのような状態管理を使うと実現できるのかの参考資料となるよう作成しています。
+また、テストの実装の参考となるよう、Unitテストも実装しています。
+
+このアプリはあくまで一例であり、MVVM でコードを書く際にはこうあるべきだ、と主張するものでないことをご理解ください。
+
+このアプリがあなたの設計パターンの知識の役に立つことを願っています。
