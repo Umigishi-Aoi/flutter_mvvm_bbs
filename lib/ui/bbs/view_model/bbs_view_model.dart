@@ -30,6 +30,7 @@ class BbsViewModel extends ChangeNotifier {
       snapshot = await _model.getAllData();
     } on Exception catch (e) {
       _errorMessage = e.toString();
+      notifyListeners();
       return;
     }
     try {
@@ -52,7 +53,6 @@ class BbsViewModel extends ChangeNotifier {
       }).toList();
     } on Exception catch (e) {
       _errorMessage = e.toString();
-      return;
     }
     notifyListeners();
   }

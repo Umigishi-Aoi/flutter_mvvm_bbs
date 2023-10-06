@@ -38,6 +38,7 @@ class PostViewModel extends ChangeNotifier {
 
     if (user == null) {
       _errorMessage = 'User is null';
+      notifyListeners();
       return;
     }
 
@@ -52,8 +53,8 @@ class PostViewModel extends ChangeNotifier {
       await _firestoreModel.setData(data);
     } on Exception catch (e) {
       _errorMessage = e.toString();
-      return;
     }
+    notifyListeners();
   }
 
   @override

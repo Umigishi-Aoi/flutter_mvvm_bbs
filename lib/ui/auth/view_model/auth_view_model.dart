@@ -25,7 +25,6 @@ class AuthViewModel extends ChangeNotifier {
       await _model.signInWithGitHub();
     } on Exception catch (e) {
       _errorMessage = e.toString();
-      return;
     }
 
     notifyListeners();
@@ -36,7 +35,6 @@ class AuthViewModel extends ChangeNotifier {
       await _model.signOut();
     } on Exception catch (e) {
       _errorMessage = e.toString();
-      return;
     }
     notifyListeners();
   }
