@@ -27,7 +27,6 @@ class AuthViewModel extends ChangeNotifier {
       _errorMessage = e.toString();
       return;
     }
-
     notifyListeners();
   }
 
